@@ -1,0 +1,22 @@
+{
+  "name": "dotnet-core-template-repository",
+  "version": "0.1.0",
+  "private": true,
+  "devDependencies": {
+    "husky": "^4.2.5",
+    "lint-staged": "^10.2.11"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged -r"
+    }
+  },
+  "lint-staged": {
+    "*.cs": [
+      "dotnet dotnet-format --include"
+    ]
+  },
+  "scripts": {
+    "preinstall": "dotnet tool restore"
+  }
+}

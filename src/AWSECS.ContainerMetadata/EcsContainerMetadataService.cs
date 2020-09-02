@@ -3,14 +3,14 @@ using System.IO;
 using System.Linq;
 using System.Net;
 using System.Text.Json;
-using AWS.ECS.Metadata.Models;
+using AWSECS.ContainerMetadata.Models;
 
-namespace AWS.ECS.Metadata
+namespace AWSECS.ContainerMetadata
 {
     /// <summary>
-    /// ECS metadata service.
+    /// ECS container metadata service.
     /// </summary>
-    public static class EcsMetadata
+    public static class EcsContainerMetadataService
     {
         /// <summary>
         /// Get the host port using the container port.
@@ -21,7 +21,7 @@ namespace AWS.ECS.Metadata
         {
             try
             {
-                var containerMetadata = GetContainerMetadata();
+                var containerMetadata = GetMetadata();
 
                 return containerMetadata?.PortMappings?.FirstOrDefault(m => m.ContainerPort == containerPort)?.HostPort;
             }
@@ -42,7 +42,7 @@ namespace AWS.ECS.Metadata
         {
             try
             {
-                var containerMetadata = GetContainerMetadata();
+                var containerMetadata = GetMetadata();
 
                 return containerMetadata?.PortMappings?.FirstOrDefault(m => m.HostPort == hostPort)?.ContainerPort;
             }
@@ -62,7 +62,7 @@ namespace AWS.ECS.Metadata
         {
             try
             {
-                var containerMetadata = GetContainerMetadata();
+                var containerMetadata = GetMetadata();
 
                 if (!string.IsNullOrEmpty(containerMetadata?.HostPrivateIPv4Address))
                 {
@@ -85,7 +85,7 @@ namespace AWS.ECS.Metadata
         {
             try
             {
-                var containerMetadata = GetContainerMetadata();
+                var containerMetadata = GetMetadata();
 
                 if (!string.IsNullOrEmpty(containerMetadata?.HostPublicIPv4Address))
                 {
@@ -104,7 +104,7 @@ namespace AWS.ECS.Metadata
         /// Get ECS container metadata.
         /// </summary>
         /// <returns>ECS container metadata.</returns>
-        public static ContainerMetadata GetContainerMetadata()
+        public static EcsContainerMetadata GetMetadata()
         {
             try
             {
@@ -112,7 +112,7 @@ namespace AWS.ECS.Metadata
 
                 if (!string.IsNullOrEmpty(containerMetadataFile) && File.Exists(containerMetadataFile))
                 {
-                    return JsonSerializer.Deserialize<ContainerMetadata>(File.ReadAllText(containerMetadataFile));
+                    return JsonSerializer.Deserialize<EcsContainerMetadata>(File.ReadAllText(containerMetadataFile));
                 }
             }
             catch

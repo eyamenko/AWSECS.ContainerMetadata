@@ -3,11 +3,11 @@ using System.Linq;
 using System.Net;
 using Xunit;
 
-namespace AWS.ECS.Metadata.UnitTests
+namespace AWSECS.ContainerMetadata.UnitTests
 {
-    public class EcsMetadataTests
+    public class EcsContainerMetadataServiceTests
     {
-        public EcsMetadataTests()
+        public EcsContainerMetadataServiceTests()
         {
             Environment.SetEnvironmentVariable("ECS_CONTAINER_METADATA_FILE", "ecs-container-metadata.json");
         }
@@ -15,7 +15,7 @@ namespace AWS.ECS.Metadata.UnitTests
         [Fact]
         public void GetHostPort_should_find_host_port_using_container_port()
         {
-            var hostPort = EcsMetadata.GetHostPort(8080);
+            var hostPort = EcsContainerMetadataService.GetHostPort(8080);
 
             Assert.Equal(80, hostPort);
         }
@@ -23,7 +23,7 @@ namespace AWS.ECS.Metadata.UnitTests
         [Fact]
         public void GetHostPort_should_not_find_host_port_if_container_port_cannot_be_found()
         {
-            var hostPort = EcsMetadata.GetHostPort(80);
+            var hostPort = EcsContainerMetadataService.GetHostPort(80);
 
             Assert.Null(hostPort);
         }
@@ -31,7 +31,7 @@ namespace AWS.ECS.Metadata.UnitTests
         [Fact]
         public void GetContainerPort_should_find_container_port_using_host_port()
         {
-            var containerPort = EcsMetadata.GetContainerPort(80);
+            var containerPort = EcsContainerMetadataService.GetContainerPort(80);
 
             Assert.Equal(8080, containerPort);
         }
@@ -39,7 +39,7 @@ namespace AWS.ECS.Metadata.UnitTests
         [Fact]
         public void GetContainerPort_should_not_find_container_port_if_host_port_cannot_be_found()
         {
-            var containerPort = EcsMetadata.GetContainerPort(8080);
+            var containerPort = EcsContainerMetadataService.GetContainerPort(8080);
 
             Assert.Null(containerPort);
         }
@@ -47,7 +47,7 @@ namespace AWS.ECS.Metadata.UnitTests
         [Fact]
         public void GetHostPrivateIPv4Address_should_find_private_ip_v4_address()
         {
-            var ipAddress = EcsMetadata.GetHostPrivateIPv4Address();
+            var ipAddress = EcsContainerMetadataService.GetHostPrivateIPv4Address();
 
             Assert.Equal(IPAddress.Parse("192.0.2.0"), ipAddress);
         }
@@ -55,15 +55,15 @@ namespace AWS.ECS.Metadata.UnitTests
         [Fact]
         public void GetHostPublicIPv4Address_should_find_public_ip_v4_address()
         {
-            var ipAddress = EcsMetadata.GetHostPublicIPv4Address();
+            var ipAddress = EcsContainerMetadataService.GetHostPublicIPv4Address();
 
             Assert.Equal(IPAddress.Parse("203.0.113.0"), ipAddress);
         }
 
         [Fact]
-        public void GetContainerMetadata_should_find_container_metadata()
+        public void GetMetadata_should_find_container_metadata()
         {
-            var containerMetadata = EcsMetadata.GetContainerMetadata();
+            var containerMetadata = EcsContainerMetadataService.GetMetadata();
 
             Assert.Equal("default", containerMetadata.Cluster);
             Assert.Equal("arn:aws:ecs:us-west-2:012345678910:container-instance/default/1f73d099-b914-411c-a9ff-81633b7741dd", containerMetadata.ContainerInstanceARN);

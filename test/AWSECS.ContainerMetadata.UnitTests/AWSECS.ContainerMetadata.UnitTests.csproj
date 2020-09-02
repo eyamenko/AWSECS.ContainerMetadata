@@ -1,4 +1,4 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
@@ -24,7 +24,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\src\AWS.ECS.Metadata\AWS.ECS.Metadata.csproj" />
+    <ProjectReference Include="..\..\src\AWSECS.ContainerMetadata\AWSECS.ContainerMetadata.csproj" />
   </ItemGroup>
 
 </Project>

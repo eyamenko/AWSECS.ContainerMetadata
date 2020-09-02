@@ -1,11 +1,11 @@
 ﻿using System.Collections.Generic;
 
-namespace AWS.ECS.Metadata.Models
+namespace AWSECS.ContainerMetadata.Models
 {
     /// <summary>
     /// ECS container metadata.
     /// </summary>
-    public class ContainerMetadata
+    public class EcsContainerMetadata
     {
         /// <summary>
         /// The name of the cluster that the container's task is running on.

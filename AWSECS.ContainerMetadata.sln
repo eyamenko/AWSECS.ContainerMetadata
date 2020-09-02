@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30413.136
 MinimumVisualStudioVersion = 15.0.26124.0
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWS.ECS.Metadata", "src\AWS.ECS.Metadata\AWS.ECS.Metadata.csproj", "{E9D4CD3C-EEA2-488A-AED4-836788C3A8E7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSECS.ContainerMetadata", "src\AWSECS.ContainerMetadata\AWSECS.ContainerMetadata.csproj", "{E9D4CD3C-EEA2-488A-AED4-836788C3A8E7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AWS.ECS.Metadata.UnitTests", "test\AWS.ECS.Metadata.UnitTests\AWS.ECS.Metadata.UnitTests.csproj", "{9E9DFE50-58F9-438C-8BE2-7632E21AE0DA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSECS.ContainerMetadata.UnitTests", "test\AWSECS.ContainerMetadata.UnitTests\AWSECS.ContainerMetadata.UnitTests.csproj", "{9E9DFE50-58F9-438C-8BE2-7632E21AE0DA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

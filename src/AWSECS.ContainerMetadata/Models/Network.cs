@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace AWS.ECS.Metadata.Models
+namespace AWSECS.ContainerMetadata.Models
 {
     public class Network
     {

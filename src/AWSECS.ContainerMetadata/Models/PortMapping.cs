@@ -1,4 +1,4 @@
-﻿namespace AWS.ECS.Metadata.Models
+﻿namespace AWSECS.ContainerMetadata.Models
 {
     public class PortMapping
     {

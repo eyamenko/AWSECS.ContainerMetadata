@@ -1,4 +1,4 @@
-## AWS ECS metadata service
+## AWS ECS container metadata service
 
 ### Installation
 

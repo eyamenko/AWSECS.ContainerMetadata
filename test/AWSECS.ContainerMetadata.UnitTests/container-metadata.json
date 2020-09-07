@@ -1,0 +1,30 @@
+{
+  "DockerId": "c7a6b9b237934e9999f319ea3ccc9da4query-metadata",
+  "Name": "query-metadata",
+  "DockerName": "query-metadata",
+  "Image": "mreferre/eksutils",
+  "ImageID": "sha256:1b146e73f801617610dcb00441c6423e7c85a7583dd4a65ed1be03cb0e123311",
+  "Labels": {
+    "com.amazonaws.ecs.cluster": "arn:aws:ecs:us-west-2:&ExampleAWSAccountNo1;:cluster/default",
+    "com.amazonaws.ecs.container-name": "query-metadata",
+    "com.amazonaws.ecs.task-arn": "arn:aws:ecs:us-west-2:&ExampleAWSAccountNo1;:task/default/c7a6b9b237934e9999f319ea3ccc9da4",
+    "com.amazonaws.ecs.task-definition-family": "query-metadata",
+    "com.amazonaws.ecs.task-definition-version": "3"
+  },
+  "DesiredStatus": "RUNNING",
+  "KnownStatus": "RUNNING",
+  "Limits": {
+    "CPU": 2
+  },
+  "CreatedAt": "2020-03-26T22:11:23.62831313Z",
+  "StartedAt": "2020-03-26T22:11:23.62831313Z",
+  "Type": "NORMAL",
+  "Networks": [
+    {
+      "NetworkMode": "awsvpc",
+      "IPv4Addresses": [
+        "10.0.0.61"
+      ]
+    }
+  ]
+}

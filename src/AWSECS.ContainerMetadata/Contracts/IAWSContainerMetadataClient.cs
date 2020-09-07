@@ -1,6 +1,6 @@
 ﻿namespace AWSECS.ContainerMetadata.Contracts
 {
-    public interface IAwsEcsContainerMetadataClient
+    public interface IAWSContainerMetadataClient
     {
         string GetContainerMetadata();
         string GetHostPrivateIPv4Address();

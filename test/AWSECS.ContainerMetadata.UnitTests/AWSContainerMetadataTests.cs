@@ -11,15 +11,15 @@ using Xunit;
 
 namespace AWSECS.ContainerMetadata.UnitTests
 {
-    public class AwsEcsContainerMetadataTests
+    public class AWSContainerMetadataTests
     {
-        private readonly Mock<IAwsEcsContainerMetadataClient> _awsEcsContainerMetadataClient;
-        private readonly AwsEcsContainerMetadata _awsEcsContainerMetadata;
+        private readonly Mock<IAWSContainerMetadataClient> _awsEcsContainerMetadataClient;
+        private readonly AWSContainerMetadata _awsEcsContainerMetadata;
 
-        public AwsEcsContainerMetadataTests()
+        public AWSContainerMetadataTests()
         {
-            _awsEcsContainerMetadataClient = new Mock<IAwsEcsContainerMetadataClient>();
-            _awsEcsContainerMetadata = new AwsEcsContainerMetadata(_awsEcsContainerMetadataClient.Object, NullLogger<AwsEcsContainerMetadata>.Instance);
+            _awsEcsContainerMetadataClient = new Mock<IAWSContainerMetadataClient>();
+            _awsEcsContainerMetadata = new AWSContainerMetadata(_awsEcsContainerMetadataClient.Object, NullLogger<AWSContainerMetadata>.Instance);
         }
 
         [Fact]

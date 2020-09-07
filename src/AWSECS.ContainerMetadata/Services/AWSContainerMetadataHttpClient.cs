@@ -6,11 +6,11 @@ using Microsoft.Extensions.Logging;
 
 namespace AWSECS.ContainerMetadata.Services
 {
-    public class AwsEcsContainerMetadataHttpClient : IAwsEcsContainerMetadataClient
+    public class AWSContainerMetadataHttpClient : IAWSContainerMetadataClient
     {
         private readonly ILogger _logger;
 
-        public AwsEcsContainerMetadataHttpClient(ILogger<AwsEcsContainerMetadataHttpClient> logger)
+        public AWSContainerMetadataHttpClient(ILogger<AWSContainerMetadataHttpClient> logger)
         {
             _logger = logger ?? throw new ArgumentNullException(nameof(logger));
         }

@@ -10,12 +10,12 @@ namespace AWSECS.ContainerMetadata.Extensions
     public static class ServiceCollectionExtensions
     {
         /// <summary>
-        /// Adds AWS ECS container metadata services to the collection.
+        /// Adds AWS ECS container metadata service to the collection.
         /// </summary>
         /// <param name="collection">Service collection.</param>
         /// <param name="lifetime">Service lifetime.</param>
         /// <returns>A reference to the current instance of <see cref="IServiceCollection"/>.</returns>
-        public static IServiceCollection AddAwsEcsContainerMetadataServices(this IServiceCollection collection, ServiceLifetime lifetime = ServiceLifetime.Singleton)
+        public static IServiceCollection AddAWSContainerMetadataService(this IServiceCollection collection, ServiceLifetime lifetime = ServiceLifetime.Singleton)
         {
             if (collection == null)
             {
@@ -24,8 +24,8 @@ namespace AWSECS.ContainerMetadata.Extensions
 
             return collection.Add(new List<ServiceDescriptor>
             {
-                ServiceDescriptor.Describe(typeof(IAwsEcsContainerMetadata), typeof(AwsEcsContainerMetadata), lifetime),
-                ServiceDescriptor.Describe(typeof(IAwsEcsContainerMetadataClient), typeof(AwsEcsContainerMetadataHttpClient), lifetime),
+                ServiceDescriptor.Describe(typeof(IAWSContainerMetadata), typeof(AWSContainerMetadata), lifetime),
+                ServiceDescriptor.Describe(typeof(IAWSContainerMetadataClient), typeof(AWSContainerMetadataHttpClient), lifetime),
             });
         }
     }

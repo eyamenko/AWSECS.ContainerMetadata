@@ -6,12 +6,12 @@ namespace AWSECS.ContainerMetadata.Contracts
     /// <summary>
     /// AWS ECS container metadata service.
     /// </summary>
-    public interface IAwsEcsContainerMetadata
+    public interface IAWSContainerMetadata
     {
         /// <summary>
         /// Gets AWS ECS container metadata.
         /// </summary>
-        /// <returns>ECS container metadata.</returns>
+        /// <returns>AWS ECS container metadata.</returns>
         ContainerResponse GetContainerMetadata();
 
         /// <summary>

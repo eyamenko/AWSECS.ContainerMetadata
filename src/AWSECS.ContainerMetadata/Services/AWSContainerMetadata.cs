@@ -7,12 +7,12 @@ using Microsoft.Extensions.Logging;
 
 namespace AWSECS.ContainerMetadata.Services
 {
-    public class AwsEcsContainerMetadata : IAwsEcsContainerMetadata
+    public class AWSContainerMetadata : IAWSContainerMetadata
     {
-        private readonly IAwsEcsContainerMetadataClient _awsEcsContainerMetadataClient;
+        private readonly IAWSContainerMetadataClient _awsEcsContainerMetadataClient;
         private readonly ILogger _logger;
 
-        public AwsEcsContainerMetadata(IAwsEcsContainerMetadataClient awsEcsContainerMetadataClient, ILogger<AwsEcsContainerMetadata> logger)
+        public AWSContainerMetadata(IAWSContainerMetadataClient awsEcsContainerMetadataClient, ILogger<AWSContainerMetadata> logger)
         {
             _awsEcsContainerMetadataClient = awsEcsContainerMetadataClient ?? throw new ArgumentNullException(nameof(awsEcsContainerMetadataClient));
             _logger = logger ?? throw new ArgumentNullException(nameof(logger));

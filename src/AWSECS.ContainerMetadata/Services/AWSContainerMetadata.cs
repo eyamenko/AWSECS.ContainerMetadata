@@ -34,7 +34,7 @@ namespace AWSECS.ContainerMetadata.Services
                 _logger.LogError(ex, "Failed to get AWS ECS container metadata.");
             }
 
-            return null;
+            return default;
         }
 
         public IPAddress GetHostPrivateIPv4Address()
@@ -53,7 +53,7 @@ namespace AWSECS.ContainerMetadata.Services
                 _logger.LogError(ex, "Failed to get AWS ECS container host's private IPv4 address.");
             }
 
-            return null;
+            return default;
         }
 
         public IPAddress GetHostPublicIPv4Address()
@@ -72,7 +72,7 @@ namespace AWSECS.ContainerMetadata.Services
                 _logger.LogError(ex, "Failed to get AWS ECS container host's public IPv4 address.");
             }
 
-            return null;
+            return default;
         }
     }
 }

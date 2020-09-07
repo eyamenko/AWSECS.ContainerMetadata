@@ -22,7 +22,7 @@ namespace AWSECS.ContainerMetadata.Services
                 return GetResponseString(containerMetadataUri);
             }
 
-            return null;
+            return default;
         }
 
         public string GetHostPrivateIPv4Address() => GetResponseString(new Uri("http://169.254.169.254/latest/meta-data/local-ipv4"));
@@ -41,7 +41,7 @@ namespace AWSECS.ContainerMetadata.Services
                 {
                     _logger.LogError("Failed to execute HTTP request. Request URI: {RequestUri}, Status code: {StatusCode}.", requestUri, response.StatusCode);
 
-                    return null;
+                    return default;
                 }
 
                 using var stream = response.GetResponseStream();
@@ -58,7 +58,7 @@ namespace AWSECS.ContainerMetadata.Services
                 _logger.LogError(ex, "Failed to get AWS metadata response.");
             }
 
-            return null;
+            return default;
         }
     }
 }

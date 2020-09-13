@@ -2,4 +2,4 @@
 
 ### Installation
 
-`nuget install AWSECS.ContainerMetadata`
+`dotnet add package AWSECS.ContainerMetadata`
